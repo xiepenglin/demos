@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>this is a test page.</p>
+    <script>
+        window.addEventListener('load', function() {
+            console.log('document loaded');
+        });
+
+        window.addEventListener('beforeunload', function(e) {
+            //event = event || window.event;
+            var message = 'are you sure?';
+            (e || window.event).returnValue = message; //ie  firefox
+            return message; //chrome
+        });
+
+        /* window.addEventListener('beforeunload', function(e) {
+            //event = event || window.event;
+            var message = '\o/';
+            (e || window.event).returnValue = message; //ie  firefox
+            return message; //chrome
+        }); */
+
+        /* window.addEventListener("beforeunload", function(e) {
+            var confirmationMessage = "\o/";
+
+            (e || window.event).returnValue = confirmationMessage; // Gecko and Trident
+            return confirmationMessage; // Gecko and WebKit
+        }); */
+    </script>
+</body>
+
+</html>
